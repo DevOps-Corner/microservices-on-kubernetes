@@ -84,12 +84,12 @@ You can call all the Restful endpoints from this app and Scale up and Down your 
 ### Scaling the application:
 1. To scale Up/Down you application, all you need to do is to change the number of replicas in the sample-application.yaml file:
 
-    ...
-    spec:
-      selector:
-        matchLabels:
-          app: spring-boot-app
-      replicas: 3 #3 instances instead of 1
+        ...
+        spec:
+          selector:
+            matchLabels:
+              app: spring-boot-app
+          replicas: 3 #It was 1 before
 
 2. Now replace the configuration
 `kubectl replace -f sample-application.yaml`
@@ -98,9 +98,9 @@ You can call all the Restful endpoints from this app and Scale up and Down your 
 ### Scaling the database:
 
 1. To scale Up/Down Couchbase, just change the number of servers inside the couchbase-cluster.yaml:
-    ...
-    servers:
-        - size: 6 #6 instead of 3
+        ...
+        servers:
+            - size: 6 #It was 3 before
 
 2. Now replace the configuration
 `kubectl replace -f couchbase-cluster.yaml`
