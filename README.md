@@ -15,7 +15,7 @@ All yaml files are inside the "kubernetes" folder
 
 ## Deploying the database ###########
 
-1.  If you are using a real cluseter, go to the the kubernetes/rbac folder and execute:
+1.  If you are using a real cluster, go to the the kubernetes/rbac folder and execute:
 `./create_role.sh`
 
 2.  Specify couchbase's password in the "secret.yaml" file and the run:
@@ -79,9 +79,9 @@ Them, all you have to do is to call your browser http://YOUR_EXTERNAL_IP_HERE:80
 You can call all the Restful endpoints from this app and Scale up and Down your Database and Application
 
 
-## Scalling Up and Down
+## Scaling Up and Down
 
-### Scalling the application:
+### Scaling the application:
 1. To scale Up/Down you application, all you need to do is to change the number of replicas in the sample-application.yaml file:
 
     ...
@@ -95,7 +95,7 @@ You can call all the Restful endpoints from this app and Scale up and Down your 
 `kubectl replace -f sample-application.yaml`
 
 
-### Scalling the database:
+### Scaling the database:
 
 1. To scale Up/Down Couchbase, just change the number of servers inside the couchbase-cluster.yaml:
     ...
