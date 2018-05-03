@@ -50,31 +50,32 @@ The docker image is public, so you don't need to touch the application (unless y
 4. Get the External IP:
 `kubectl describe service spring-boot-load-balancer`
 
-	it will return somethin like:
+	it will return something like:
+
+
+        Name:                     spring-boot-load-balancer
+        Namespace:                default
+        Labels:                   <none>
+        Annotations:              <none>
+        Selector:                 app=spring-boot-app
+        Type:                     LoadBalancer
+        IP:                       10.3.0.57
+        LoadBalancer Ingress:   YOUR_EXTERNAL_IP_HERE
+        Port:                     http  8080/TCP
+        TargetPort:               8080/TCP
+        NodePort:                 http  32340/TCP
+        Endpoints:                10.2.2.7:8080
+        Port:                     management  8081/TCP
+        TargetPort:               8081/TCP
+        NodePort:                 management  31415/TCP
+        Endpoints:                10.2.2.7:8081
+        Session Affinity:         None
+        External Traffic Policy:  Cluster
+        Events:                   <none>
 
 
 
-    Name:                     spring-boot-load-balancer
-    Namespace:                default
-    Labels:                   <none>
-    Annotations:              <none>
-    Selector:                 app=spring-boot-app
-    Type:                     LoadBalancer
-    IP:                       10.3.0.57
-    LoadBalancer Ingress:   YOUR_EXTERNAL_IP_HERE
-    Port:                     http  8080/TCP
-    TargetPort:               8080/TCP
-    NodePort:                 http  32340/TCP
-    Endpoints:                10.2.2.7:8080
-    Port:                     management  8081/TCP
-    TargetPort:               8081/TCP
-    NodePort:                 management  31415/TCP
-    Endpoints:                10.2.2.7:8081
-    Session Affinity:         None
-    External Traffic Policy:  Cluster
-    Events:                   <none>
-
-Them, all you have to do is to call your browser http://YOUR_EXTERNAL_IP_HERE:8080/ , and congratulations! your microservice is running.
+Them, all you have to do is to call your browser http://YOUR_EXTERNAL_IP_HERE:8080/ , and congratulations! your Microservice is running.
 
 You can call all the Restful endpoints from this app and Scale up and Down your Database and Application
 
@@ -102,7 +103,7 @@ You can call all the Restful endpoints from this app and Scale up and Down your 
         ...
         servers:
             - size: 6 #It was 3 before
-            
+
 
 2. Now replace the configuration
 `kubectl replace -f couchbase-cluster.yaml`
