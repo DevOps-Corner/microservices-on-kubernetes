@@ -98,9 +98,11 @@ You can call all the Restful endpoints from this app and Scale up and Down your 
 ### Scaling the database:
 
 1. To scale Up/Down Couchbase, just change the number of servers inside the couchbase-cluster.yaml:
+
         ...
         servers:
             - size: 6 #It was 3 before
+            
 
 2. Now replace the configuration
 `kubectl replace -f couchbase-cluster.yaml`
