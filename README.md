@@ -47,10 +47,11 @@ The docker image is public, so you don't need to touch the application (unless y
 3. Create a load balancer to access your microservice externally:
 `kubectl create -f spring-boot-service.yaml`
 
-4. Get the External IP:
+4. The load-balancer might take a while to be available (at least 5 minutes during my tests). Once it is up, get
+the External IP by running the following command:
 `kubectl describe service spring-boot-load-balancer`
 
-	it will return something like:
+	It will return something like:
 
 
         Name:                     spring-boot-load-balancer
@@ -75,7 +76,7 @@ The docker image is public, so you don't need to touch the application (unless y
 
 
 
-Them, all you have to do is to call your browser http://YOUR_EXTERNAL_IP_HERE:8080/ , and congratulations! your Microservice is running.
+Then, go to http://YOUR_EXTERNAL_IP_HERE:8080/ using your browser and congratulations! your Microservice is up and running.
 
 You can call all the Restful endpoints from this app and Scale up and Down your Database and Application
 
