@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: couchbase-sample-service
+spec:
+  type: ExternalName
+  externalName: my.sample.couchbase.com
+  selector:
+    app: couchbase,couchbase_cluster=cb-example
