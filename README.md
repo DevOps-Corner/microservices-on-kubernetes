@@ -34,7 +34,7 @@ All yaml files are inside the "kubernetes" folder
 	3. Go to Security and add a new user called 'couchbase-sample' with password 'couchbase-sample'
 
 
-########## Deploying the application ###########
+## Deploying the Application
 
 The docker image is public, so you don't need to touch the application (unless you would like to change something)
 
