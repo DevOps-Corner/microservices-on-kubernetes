@@ -10,7 +10,7 @@ All yaml files are inside the "kubernetes" folder
 
 
 
-#How to run this demo:
+# How to run this demo:
 
 
 ## Deploying the database ###########
