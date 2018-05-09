@@ -1,6 +1,7 @@
 package com.cb.springdata.sample.rest;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,4 +64,20 @@ public class BuildingServiceController {
 
         return buildingService.save(building);
     }
+
+    @RequestMapping(value = "/populate", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<String> populateRandomData(){
+        List<String> ids = new ArrayList<>();
+        for(int i=0; i< 200; i++){
+            Building building = new Building();
+            building.setId("someId-"+i);
+            building.setName("Some Name "+i);
+            building.setCompanyId("company1");
+            buildingService.save(building);
+            ids.add(building.getId());
+        }
+        return ids;
+    }
+
+
 }

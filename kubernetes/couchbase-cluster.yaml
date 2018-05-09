@@ -17,7 +17,7 @@ spec:
     - name: couchbase-sample
       type: couchbase
       memoryQuota: 128
-      replicas: 1
+      replicas: 3
       ioPriority: high
       evictionPolicy: fullEviction
       conflictResolution: seqno
